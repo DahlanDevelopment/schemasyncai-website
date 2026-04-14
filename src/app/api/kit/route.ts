@@ -38,18 +38,20 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         ...subscriberPayload,
         fields: {
-          "Last name": lastName || "",
-          "Company": company || "",
+          "Last Name": lastName || "",
+          "Company Name": company || "",
           "Role": role || "",
           "Source": "Schema Complexity Estimator",
         },
       }),
     });
 
+    const createText = await createRes.text();
+    console.log("Kit.com create subscriber response:", createRes.status, createText);
+
     // If custom fields caused an error, retry without them
     if (!createRes.ok) {
-      const errText = await createRes.text();
-      console.error("Kit.com create subscriber (with fields) error:", createRes.status, errText);
+      console.error("Kit.com create subscriber (with fields) error:", createRes.status, createText);
 
       const retryRes = await fetch(`${KIT_API_URL}/subscribers`, {
         method: "POST",
@@ -73,8 +75,11 @@ export async function POST(request: Request) {
       },
     );
 
+    const formText = await formRes.text();
+    console.log("Kit.com add to form response:", formRes.status, formText);
+
     if (!formRes.ok) {
-      console.error("Kit.com add to form error:", formRes.status, await formRes.text());
+      console.error("Kit.com add to form error:", formRes.status, formText);
     }
 
     return NextResponse.json({ ok: true });
