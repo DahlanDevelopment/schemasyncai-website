@@ -38,10 +38,10 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         ...subscriberPayload,
         fields: {
-          "Last Name": lastName || "",
-          "Company Name": company || "",
-          "Role": role || "",
-          "Source": "Schema Complexity Estimator",
+          "last_name": lastName || "",
+          "company_name": company || "",
+          "role": role || "",
+          "source": "Schema Complexity Estimator",
         },
       }),
     });
