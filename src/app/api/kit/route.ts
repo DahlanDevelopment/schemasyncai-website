@@ -25,13 +25,18 @@ export async function POST(request: Request) {
   };
 
   try {
-    // Step 1: Create (or update) the subscriber with custom fields
+    // Step 1: Create (or update) the subscriber — only use built-in fields first
+    const subscriberPayload: Record<string, unknown> = {
+      email_address: email,
+      first_name: firstName || "",
+    };
+
+    // Step 1a: Try with custom fields
     const createRes = await fetch(`${KIT_API_URL}/subscribers`, {
       method: "POST",
       headers,
       body: JSON.stringify({
-        email_address: email,
-        first_name: firstName || "",
+        ...subscriberPayload,
         fields: {
           "Last name": lastName || "",
           "Company": company || "",
@@ -41,9 +46,21 @@ export async function POST(request: Request) {
       }),
     });
 
+    // If custom fields caused an error, retry without them
     if (!createRes.ok) {
-      console.error("Kit.com create subscriber error:", createRes.status, await createRes.text());
-      return NextResponse.json({ ok: true });
+      const errText = await createRes.text();
+      console.error("Kit.com create subscriber (with fields) error:", createRes.status, errText);
+
+      const retryRes = await fetch(`${KIT_API_URL}/subscribers`, {
+        method: "POST",
+        headers,
+        body: JSON.stringify(subscriberPayload),
+      });
+
+      if (!retryRes.ok) {
+        console.error("Kit.com create subscriber (retry) error:", retryRes.status, await retryRes.text());
+        return NextResponse.json({ ok: true });
+      }
     }
 
     // Step 2: Add the subscriber to the form
