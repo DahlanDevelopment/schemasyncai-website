@@ -19,30 +19,45 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Email is required." }, { status: 400 });
   }
 
+  const headers = {
+    "Content-Type": "application/json",
+    "X-Kit-Api-Key": KIT_API_KEY,
+  };
+
   try {
-    const response = await fetch(
+    // Step 1: Create (or update) the subscriber with custom fields
+    const createRes = await fetch(`${KIT_API_URL}/subscribers`, {
+      method: "POST",
+      headers,
+      body: JSON.stringify({
+        email_address: email,
+        first_name: firstName || "",
+        fields: {
+          "Last name": lastName || "",
+          "Company": company || "",
+          "Role": role || "",
+          "Source": "Schema Complexity Estimator",
+        },
+      }),
+    });
+
+    if (!createRes.ok) {
+      console.error("Kit.com create subscriber error:", createRes.status, await createRes.text());
+      return NextResponse.json({ ok: true });
+    }
+
+    // Step 2: Add the subscriber to the form
+    const formRes = await fetch(
       `${KIT_API_URL}/forms/${KIT_FORM_ID}/subscribers`,
       {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${KIT_API_KEY}`,
-        },
-        body: JSON.stringify({
-          email_address: email,
-          first_name: firstName || "",
-          fields: {
-            last_name: lastName || "",
-            company: company || "",
-            role: role || "",
-            source: "Schema Complexity Estimator",
-          },
-        }),
+        headers,
+        body: JSON.stringify({ email_address: email }),
       },
     );
 
-    if (!response.ok) {
-      console.error("Kit.com API error:", response.status, await response.text());
+    if (!formRes.ok) {
+      console.error("Kit.com add to form error:", formRes.status, await formRes.text());
     }
 
     return NextResponse.json({ ok: true });
