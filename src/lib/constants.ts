@@ -8,6 +8,7 @@ export const SITE_DESCRIPTION =
 export const NAV_ITEMS: NavItem[] = [
   { label: "Platform", href: "/platform" },
   { label: "Solutions", href: "/solutions" },
+  { label: "Estimator", href: "/estimator" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
   { label: "Resources", href: "/resources" },
@@ -17,7 +18,7 @@ export const FEATURES: Feature[] = [
   {
     title: "Schema Extraction",
     description:
-      "Connect to any Salesforce org and extract the complete schema metadata \u2014 objects, fields, relationships, validation rules, and custom configurations.",
+      "Connect to any Salesforce org and extract the complete schema metadata — objects, fields, relationships, validation rules, and custom configurations.",
     icon: "extract",
     details: [
       "SFDX-powered metadata extraction",
@@ -199,7 +200,7 @@ export const FAQS: FAQ[] = [
   {
     question: "How does SchemaSync.AI connect to our Salesforce orgs?",
     answer:
-      "SchemaSync.AI uses SFDX (Salesforce DX) to securely connect and extract metadata. We only read schema metadata \u2014 no customer data is accessed or stored. Connections use OAuth 2.0 and can be revoked at any time.",
+      "SchemaSync.AI uses SFDX (Salesforce DX) to securely connect and extract metadata. We only read schema metadata — no customer data is accessed or stored. Connections use OAuth 2.0 and can be revoked at any time.",
   },
   {
     question: "How long does a typical schema analysis take?",
@@ -237,7 +238,7 @@ export const COMPANY_VALUES = [
   {
     title: "Security",
     description:
-      "Enterprise-grade data handling. We access only metadata \u2014 never your business data. SOC 2 compliance in progress.",
+      "Enterprise-grade data handling. We access only metadata — never your business data. SOC 2 compliance in progress.",
   },
   {
     title: "Speed",
