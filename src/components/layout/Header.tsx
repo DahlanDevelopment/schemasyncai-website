@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { NAV_ITEMS } from "@/lib/constants";
 import Button from "@/components/ui/Button";
+import { LogoMark, Wordmark } from "@/components/ui/Logo";
 import MobileNav from "./MobileNav";
 
 export default function Header() {
@@ -28,13 +29,13 @@ export default function Header() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-18">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 rounded-lg bg-electric-blue/20 border border-electric-blue/30 flex items-center justify-center group-hover:bg-electric-blue/30 transition-colors">
-                <span className="text-electric-blue font-bold text-sm">S</span>
-              </div>
-              <span className="text-white font-bold text-lg">
-                SchemaSync<span className="text-electric-blue">.AI</span>
-              </span>
+            <Link
+              href="/"
+              className="flex items-center gap-3 group"
+              aria-label="SchemaSync.AI home"
+            >
+              <LogoMark size={36} />
+              <Wordmark size={18} tone="dark" />
             </Link>
 
             {/* Desktop Nav */}
