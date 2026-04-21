@@ -54,9 +54,9 @@ export default function AboutPage() {
             <GlassCard className="p-10 sm:p-14">
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Our Story</h2>
               <div className="space-y-5 text-silver-300 text-lg leading-relaxed">
-                <p>Every M&A deal promises synergies. But when it comes to technology integration \u2014 especially Salesforce \u2014 those promises often collide with reality. Custom objects, conflicting field names, incompatible data types, and undocumented configurations turn what should be a 90-day integration into a 12-month nightmare.</p>
+                <p>Every M&A deal promises synergies. But when it comes to technology integration — especially Salesforce — those promises often collide with reality. Custom objects, conflicting field names, incompatible data types, and undocumented configurations turn what should be a 90-day integration into a 12-month nightmare.</p>
                 <p>SchemaSync.AI was created to solve this exact problem. Our founders spent years in the trenches of M&A integration, watching PE firms and portfolio companies struggle with Salesforce consolidation.</p>
-                <p>We built SchemaSync.AI to bring intelligence and automation to this process. Our platform uses AI to extract, analyze, and harmonize Salesforce schemas across organizations \u2014 delivering in hours what previously took weeks of consultant time.</p>
+                <p>We built SchemaSync.AI to bring intelligence and automation to this process. Our platform uses AI to extract, analyze, and harmonize Salesforce schemas across organizations — delivering in hours what previously took weeks of consultant time.</p>
               </div>
             </GlassCard>
           </motion.div>

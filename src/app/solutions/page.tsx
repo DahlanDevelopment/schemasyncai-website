@@ -21,7 +21,7 @@ export default function SolutionsPage() {
               Built for Every Stakeholder in the <span className="gradient-text-blue">M&A Lifecycle</span>
             </h1>
             <p className="text-lg sm:text-xl text-silver-300 max-w-3xl mx-auto">
-              Whether you&apos;re a PE firm orchestrating portfolio consolidation, an advisory team delivering due diligence, or an IT leader managing the integration \u2014 SchemaSync.AI has you covered.
+              Whether you&apos;re a PE firm orchestrating portfolio consolidation, an advisory team delivering due diligence, or an IT leader managing the integration — SchemaSync.AI has you covered.
             </p>
           </motion.div>
         </Container>
