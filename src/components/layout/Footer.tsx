@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Divider from "@/components/ui/Divider";
+import { LogoMark, Wordmark } from "@/components/ui/Logo";
 
 const footerLinks = {
   Product: [
@@ -26,13 +27,13 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-16">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-electric-blue/20 border border-electric-blue/30 flex items-center justify-center">
-                <span className="text-electric-blue font-bold text-sm">S</span>
-              </div>
-              <span className="text-white font-bold text-lg">
-                SchemaSync<span className="text-electric-blue">.AI</span>
-              </span>
+            <Link
+              href="/"
+              className="flex items-center gap-3 mb-4"
+              aria-label="SchemaSync.AI home"
+            >
+              <LogoMark size={36} />
+              <Wordmark size={18} tone="dark" />
             </Link>
             <p className="text-sm text-silver-300 leading-relaxed">
               AI-powered Salesforce schema integration for M&A. Accelerate

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#0F1D32"/>
+  <defs>
+    <clipPath id="ss-icon-clip" transform="translate(64 0) scale(-1 1)">
+      <text x="32" y="38" text-anchor="middle" dominant-baseline="middle"
+        font-family="'Segoe UI Symbol','Apple Symbols','DejaVu Sans','Noto Sans Symbols',serif"
+        font-size="58">&#9822;</text>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#ss-icon-clip)">
+    <rect x="0" y="0" width="64" height="64" fill="#2D7FF9"/>
+    <rect x="0" y="38" width="64" height="1.6" fill="#0F1D32" opacity="0.9"/>
+    <rect x="0" y="44" width="64" height="1.6" fill="#0F1D32" opacity="0.9"/>
+    <rect x="0" y="50" width="64" height="1.6" fill="#0F1D32" opacity="0.9"/>
+  </g>
+  <circle cx="8" cy="32" r="1.6" fill="#2D7FF9" opacity="0.5"/>
+  <circle cx="56" cy="40" r="1.6" fill="#2D7FF9" opacity="0.5"/>
+</svg>
