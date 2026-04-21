@@ -32,7 +32,7 @@ export default function Hero() {
             </h1>
             <p className="text-lg sm:text-xl text-silver-200 max-w-xl leading-relaxed">
               AI-powered schema harmonization for Private Equity firms. Extract,
-              compare, and merge Salesforce org schemas in hours \u2014 not months.
+              compare, and merge Salesforce org schemas in hours — not months.
               Reduce integration risk and accelerate post-acquisition value
               creation.
             </p>

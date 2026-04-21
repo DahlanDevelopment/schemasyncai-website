@@ -95,7 +95,7 @@ export default function ResourcesPage() {
           <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} className="text-center">
             <GlassCard className="p-10 sm:p-14">
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">Stay in the Loop</h2>
-              <p className="text-silver-300 mb-8">Get notified when new resources drop \u2014 including our upcoming whitepaper, &quot;The PE Guide to Salesforce Consolidation.&quot;</p>
+              <p className="text-silver-300 mb-8">Get notified when new resources drop — including our upcoming whitepaper, &quot;The PE Guide to Salesforce Consolidation.&quot;</p>
               {submitted ? (
                 <div className="flex items-center justify-center gap-3 text-electric-blue">
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
