@@ -1,6 +1,11 @@
 import type { MetadataRoute } from "next";
+import { SITE_OFFLINE } from "@/lib/site-status";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  if (SITE_OFFLINE) {
+    return [];
+  }
+
   const baseUrl = "https://schemasync.ai";
 
   return [
